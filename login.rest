@@ -1,0 +1,10 @@
+post http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imhpa2lhbnR0aSIsImlkIjoiNWU0NTcxZWNlNjE4MzAyMzZmYzNhOGIzIiwiaWF0IjoxNTgxNjExNDYwfQ.cum7iQd3OU8W5m77YN0soh-zlCdSyKGx7KjJm_Y-dEs
+
+{
+	"title": "testblog2",
+	"author": "integration tester2",
+	"url": "integration.tester.fi",
+	"likes": 100,
+}
