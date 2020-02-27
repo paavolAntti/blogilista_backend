@@ -62,7 +62,26 @@ blogRouter.put('/:id', async (request, response, next) => {
 		title: body.title,
 		author: body.author,
 		url: body.url,
-		likes: body.likes
+		likes: body.likes,
+		comments: body.comments
+	}
+	try {
+		const updatedBlog = await Blog.findByIdAndUpdate(request.params.id, post)
+		response.json(updatedBlog.toJSON())
+	} catch (exception) {
+		next(exception)
+	}
+})
+
+blogRouter.put('/:id/comments', async (request, response, next) => {
+	const body = request.body
+
+	const post = {
+		title: body.title,
+		author: body.author,
+		url: body.url,
+		likes: body.likes,
+		comments: body.comments
 	}
 	try {
 		const updatedBlog = await Blog.findByIdAndUpdate(request.params.id, post)
